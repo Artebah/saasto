@@ -1,0 +1,151 @@
+.footer {
+  padding: 130px 0px 60px;
+  @media (max-width: 767px) {
+    padding: 80px 0px 40px;
+  }
+
+  // .footer__container
+
+  &__container {
+  }
+
+  // .footer__bottom
+
+  &__bottom {
+    padding: 40px 0px 0px 0px;
+    line-height: em(24, 18);
+    display: flex;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      gap: 30px;
+      color: #404040;
+      opacity: 0.5;
+    }
+  }
+
+  // .footer__terms
+
+  &__terms {
+    margin: 0px 108px 0px 0px;
+  }
+
+  // .footer__privacy
+
+  &__privacy {
+    flex: 1 1 auto;
+  }
+
+  // .footer__reserved
+
+  &__reserved {
+  }
+}
+.top-footer {
+  border-bottom: 1px solid #d9d9d9;
+  padding: 0px 0px 60px 0px;
+  display: flex;
+  align-items: center;
+  @media (max-width: 1100px) {
+    flex-wrap: wrap;
+    gap: 30px 0;
+  }
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px 0px 0px 0px;
+    border: none;
+  }
+
+  // .top-footer__logo
+
+  &__logo {
+    flex: 1 1 auto;
+    @media (max-width: 1100px) {
+      flex: 1 1 20%;
+      margin: 0px 15px 0px 0px;
+    }
+    @media (max-width: 767px) {
+      order: 0;
+    }
+  }
+
+  // .top-footer__menu
+
+  &__menu {
+    margin: 0px 170px 0px 0px;
+    @include adVal("margin-right", 170, 50, 1200, 1000);
+    @media (max-width: 1100px) {
+      flex: 1 1 70%;
+      margin: 0px 0px 0px 0px;
+    }
+
+    @media (max-width: 767px) {
+      order: 2;
+    }
+  }
+
+  // .top-footer__list
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    @media (max-width: 767px) {
+      justify-content: flex-start;
+    }
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+    li {
+      &:not(:last-child) {
+        margin: 0px 48px 0px 0px;
+        @media (max-width: 600px) {
+          margin: 0px 0px 8px 0px;
+        }
+      }
+    }
+  }
+
+  // .top-footer__link
+
+  &__link {
+    padding: 10px 0px;
+    font-size: rem(18);
+    &:hover {
+      color: $colorRed;
+    }
+    transition: all 0.3s ease 0s;
+    color: #1c0e0d;
+  }
+
+  // .top-footer__socials
+
+  &__socials {
+  }
+
+  // .top-footer__social
+
+  &__social {
+    line-height: 0;
+    display: inline-block;
+    padding: 15px;
+
+    @media (max-width: 767px) {
+      order: 1;
+    }
+    &:not(:last-child) {
+      margin: 0px 15px 0px 0px;
+    }
+    path {
+      transition: all 0.3s ease 0s;
+    }
+    &:hover {
+      path {
+        fill: #5bc17f;
+        @media (max-width: 767px) {
+          fill: $colorRed;
+        }
+      }
+    }
+  }
+}

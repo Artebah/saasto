@@ -1,0 +1,208 @@
+// Header
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 140px;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.3s ease 0s;
+  &._fixed {
+    position: fixed;
+    height: 80px;
+    background: rgba($color: #fff, $alpha: 0.9);
+  }
+  @media (max-width: 1100px) {
+    height: 80px;
+  }
+  @media (max-width: 600px) {
+    height: 60px !important;
+  }
+
+  // .header__container
+
+  &__container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  // .header__logo
+
+  &__logo {
+    flex: 1 0 auto;
+    margin: 0px 15px 0px 0px;
+    position: relative;
+    z-index: 10;
+  }
+
+  // .header__button
+
+  &__button {
+    position: relative;
+    z-index: 10;
+    min-height: 60px;
+    min-width: 135px;
+    padding: 16px 32px !important;
+    @media (max-width: 1100px) {
+      padding: 0 20px !important;
+      min-height: auto;
+      font-size: rem(16);
+      min-height: 50px;
+    }
+    @media (max-width: 700px) {
+      max-width: 300px;
+      margin: 0 auto 0;
+      display: block;
+      margin: 0px auto 20px;
+    }
+
+    // .header__button_log
+
+    &_log {
+      margin: 0px 5px 0px 0px;
+      background: transparent;
+      color: $colorRed;
+      @media (max-width: 700px) {
+        margin: 0 auto 30px;
+        background: $colorRed;
+        color: #fff;
+        &:hover {
+          background: #fa865f !important;
+        }
+      }
+      &:hover {
+        background: $colorRed;
+        color: #fff;
+      }
+    }
+
+    // .header__button_reg
+
+    &_reg {
+    }
+  }
+}
+.menu {
+  margin: 0px 110px 0px 0px;
+  @include adVal("margin-right", 110, 15, 1920, 1200);
+  // .menu__body
+  &__body {
+    @media (max-width: 1100px) {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      height: 100%;
+      width: 100%;
+      padding: 100px 0px 30px 0px;
+      background: #fff8f2;
+      transition: all 0.3s ease 0s;
+      overflow: auto;
+
+      &._open {
+        left: 0;
+        &::before {
+          content: "";
+          position: fixed;
+          width: 100%;
+          height: 80px;
+          background: #fff8f2;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  // .menu__list
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    @media (max-width: 1100px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  // .menu__item
+
+  &__item {
+    margin: 0px 48px 0px 0px;
+    @media (max-width: 1200px) {
+      margin: 0px 30px 0px 0px;
+    }
+    @media (max-width: 1100px) {
+      margin: 0px 0px 30px 0px;
+    }
+  }
+
+  // .menu__link
+
+  &__link {
+    color: #1c0e0d;
+    padding: 10px 0px;
+    transition: all 0.3s ease 0s;
+    @media (max-width: 1100px) {
+      font-size: 36px;
+    }
+    &:hover {
+      color: $colorRed;
+    }
+  }
+}
+
+// Меню бургер
+.icon-menu {
+  position: relative;
+  z-index: 10;
+  @media (min-width: 1100px) {
+    display: none;
+  }
+
+  &._active {
+    span {
+      transform: translateY(-50%) scale(0);
+    }
+    &::before {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+    &::after {
+      bottom: 50%;
+      transform: translateY(50%) rotate(-45deg);
+    }
+  }
+  background: transparent;
+  position: relative;
+  display: block;
+  width: rem(35);
+  height: rem(25);
+
+  span,
+  &::after,
+  &::before {
+    position: absolute;
+    width: 100%;
+    height: rem(3);
+    left: 0;
+    background: $colorRed;
+    border-radius: rem(2);
+    transition: all 0.3s ease 0s;
+  }
+  span {
+    top: 50%;
+    transform: translateY(-50%) scale(1);
+  }
+  &::before {
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+  }
+}
